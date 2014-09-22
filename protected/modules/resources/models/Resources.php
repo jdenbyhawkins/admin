@@ -229,5 +229,13 @@ class Resources extends CActiveRecord
 	    return $comment->save();
 	}
 
+	public function getTagLinks()
+	{
+		$links=array();
+		foreach(Tag::string2array($this->tags) as $tag)
+			$links[]=CHtml::link(CHtml::encode($tag), array('resources/index', 'tag'=>$tag));
+		return $links;
+	}
+
 	
 }

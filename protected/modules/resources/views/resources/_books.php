@@ -4,20 +4,21 @@
 	<?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$books,
 	'attributes'=>array(
-		'id',
+		'type',
 		'title',
 		'description',
+		'book_author',
 		'notes',
-		'created_at',
-		'updated_at',
-		'created_by',
-		'created_email',
-		'updated_by',
-		'updated_email',
-		//'tags',
-		//'task_id',
+		
 	),
 )); ?>
+
+<div class="created">
+		posted by <a href="mailto:<?php echo $books->created_email;?>" target="_top"> <?php echo $books->created_by ?></a><?php echo ' on ' . date('F j, Y', strtotime($books->created_at)); ?>
+	</div>
+	<div class="updated">
+		updated by <a href="mailto:<?php echo $books->updated_email;?>" target="_top"> <?php echo $books->created_by ?></a><?php echo  ' on ' . date('F j, Y', strtotime($books->updated_at)); ?>
+	</div>
 
 	
 </div><!-- book -->
