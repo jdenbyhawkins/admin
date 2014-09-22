@@ -36,8 +36,8 @@ class Comment extends CActiveRecord
 	public function rules()
 	{
 		return array(
-	        array('content, author, email', 'required'),
-	        array('author, email, url', 'length', 'max'=>128),
+	        array('content', 'required'),
+	        
 	        array('email','email'),
 	        array('url','url'),
 	    );
@@ -52,6 +52,7 @@ class Comment extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'post' => array(self::BELONGS_TO, 'Post', 'post_id'),
+
 		);
 	}
 
@@ -124,7 +125,9 @@ class Comment extends CActiveRecord
 	    if(parent::beforeSave())
 	    {
 	        if($this->isNewRecord)
-	            $this->created_at=time();
+	            $this->create_time=date('Y-m-d H:i:s');
+	        	$this->author=Yii::app()->user->username;
+	            $this->email=Yii::app()->user->email;
 	        return true;
 	    }
 	    else
@@ -135,5 +138,18 @@ class Comment extends CActiveRecord
 	{
 	    $this->status=Comment::STATUS_APPROVED;
 	    $this->update(array('status'));
+	}
+	public function getUrl($resource=null)
+	{
+		if($resource===null)
+			$resource=$this->resource;
+		return $resource->url.'#c'.$this->id;
+	}
+	public function getAuthorLink()
+	{
+		if(!empty($this->url))
+			return CHtml::link(CHtml::encode($this->author),$this->url);
+		else
+			return CHtml::encode($this->author);
 	}
 }

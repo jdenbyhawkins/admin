@@ -71,7 +71,8 @@ class Resources extends CActiveRecord
 			'files' => array(self::HAS_MANY, 'File', 'resource_id',
 	            'order'=>'files.created_at DESC'),
 			'fileCount' => array(self::STAT, 'File', 'resource_id'),
-			'comments' => array(self::HAS_MANY, 'Comment', 'post_id', 'condition'=>'comments.status='.Comment::STATUS_APPROVED, 
+			'author' => array(self::BELONGS_TO, 'User', 'author_id'),
+			'comments' => array(self::HAS_MANY, 'Comment', 'resource_id', 'condition'=>'comments.status='.Comment::STATUS_APPROVED, 
 				'order'=>'comments.create_time DESC'),
 			'commentCount' => array(self::STAT, 'Comment', 'resource_id', 'condition'=>'status='.Comment::STATUS_APPROVED),
 		);
@@ -164,17 +165,16 @@ class Resources extends CActiveRecord
 	    {
 	        if($this->isNewRecord)
 	        {
-	            $this->created_at=$this->updated_at=time();
-	            $this->created_by=Yii::app()->user->username;
+	            $this->created_at=date('Y-m-d H:i:s');
+	        	$this->created_by=Yii::app()->user->username;
 	            $this->created_email=Yii::app()->user->email;
-	            
 	        }
 	        else
 	        {
-	            $this->updated_at=time();
+            	$this->updated_at=date('Y-m-d H:i:s');
 	        	$this->updated_by=Yii::app()->user->username;
 	            $this->updated_email=Yii::app()->user->email;
-	        }
+            }
 	        return true;
 
 	    }

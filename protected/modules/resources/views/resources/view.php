@@ -145,7 +145,7 @@ $this->menu=array(
             <?php echo $model->commentCount . 'comment(s)'; ?>
         </h3>
  
-        <?php $this->renderPartial('_comments',array(
+        <?php $this->renderPartial('/resources/_comments',array(
             'resources'=>$model,
             'comments'=>$model->comments,
         )); ?>

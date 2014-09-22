@@ -43,6 +43,9 @@ class Web extends CActiveRecord
 			array('title, article_author, url', 'length', 'max'=>128),
 			array('description, picture', 'length', 'max'=>255),
 			array('url','url'),
+			array('created_at', 'default', 'value' => date('Y-m-d H:i:s'), 'setOnEmpty' => true, 'on' => 'insert'),
+            array('updated_at', 'default', 'value' => '0000-00-00 00:00:00', 'setOnEmpty' => true, 'on' => 'insert'),
+
 			//array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -140,7 +143,17 @@ class Web extends CActiveRecord
 	    if(parent::beforeSave())
 	    {
 	        if($this->isNewRecord)
-	            $this->created_at=time();
+	        {
+	            $this->created_at=date('Y-m-d H:i:s');
+	        	$this->created_by=Yii::app()->user->username;
+	            $this->created_email=Yii::app()->user->email;
+	        }
+	        else
+	        {
+            	$this->updated_at=date('Y-m-d H:i:s');
+	        	$this->updated_by=Yii::app()->user->username;
+	            $this->updated_email=Yii::app()->user->email;
+            }
 	        return true;
 	    }
 	    else
