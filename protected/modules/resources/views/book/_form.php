@@ -49,12 +49,7 @@
 		<?php echo $form->error($model,'book_author'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'picture'); ?>
-		<?php echo $form->textField($model,'picture',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'picture'); ?>
-	</div>
-
+	
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

@@ -12,7 +12,7 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -54,6 +54,7 @@
 		<?php echo $form->textField($model,'file_path',array('size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'file_path'); ?>
 	</div>
+	<p class="hint">Please <a href="mailto:contact@wildroutes.org.uk?Subject=File%20Upload" target="_top" target="_top">contact</a> a site administrator if you would like to upload a file.</p>
 
 	
 

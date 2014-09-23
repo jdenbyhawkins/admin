@@ -196,7 +196,7 @@ class ResourcesController extends Controller
 		$model=new Resources;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Resources']))
 		{
@@ -241,12 +241,24 @@ class ResourcesController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		
+		$criteria = new CDbCriteria(array(
+		   'condition' => 'resource_id=:resource_id',
+		   'params' => array(
+		    ':resource_id' => $id),
+		  ));
+	    
+	    Web::model()->deleteAll($criteria);
+	    Book::model()->deleteAll($criteria);
+	    Contact::model()->deleteAll($criteria);
+	    File::model()->deleteAll($criteria);
+	    Comment::model()->deleteAll($criteria);
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-		/*this is the blog demo version of the action delete method
+			/*this is the blog demo version of the action delete method
 		if(Yii::app()->request->isPostRequest)
 	    {
 	        // we only allow deletion via POST request
@@ -261,11 +273,12 @@ class ResourcesController extends Controller
 		*/
 	}
 
+	
+
 	protected function afterDelete()
 	{
-	    parent::afterDelete();
-	    //Comment::model()->deleteAll('resource_id='.$this->id);
-	    Tag::model()->updateFrequency($this->tags, '');
+		 Tag::model()->updateFrequency($this->tags, ''); //not sure if this does anything?!		 
+		 parent::afterDelete();
 	}
 
 	/**

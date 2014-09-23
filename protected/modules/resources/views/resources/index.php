@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Resources', 'url'=>array('create')),
+	array('label'=>'Create Resource', 'url'=>array('create')),
 	array('label'=>'Manage Resources', 'url'=>array('admin')),
 );
 
