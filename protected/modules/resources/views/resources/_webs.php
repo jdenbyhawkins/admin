@@ -4,7 +4,10 @@
 	<?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$web,
 	'attributes'=>array(
-		'type',
+		array(               
+            'label'=>'Type',
+            //'type'=>'label',
+            'value'=>Lookup::item('WebType',$web->type)),
 		'title',
 		'description',
 		'url',
@@ -25,6 +28,7 @@
 		<?php echo CHtml::link(CHtml::encode('Update'), array('web/update', 'id'=>$web->id)); ?>
 		<?php echo CHtml::link('Delete',"#", array("submit"=>array('web/delete', 'id'=>$web->id), 'confirm' => 'Are you sure?')); ?>
 	</div>
+	
 
 	
 </div><!-- web -->

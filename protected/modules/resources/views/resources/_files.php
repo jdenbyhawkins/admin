@@ -6,6 +6,9 @@
 	<div class="description">
 		<?php echo $files->description; ?>
 	</div>
+	<div class="type">
+		<?php echo Lookup::item('FileType',$files->type); ?>
+	</div>
 	<div class="notes">
 		<?php echo $files->notes; ?>
 	</div>

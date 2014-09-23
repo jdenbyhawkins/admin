@@ -4,7 +4,10 @@
 	<?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$books,
 	'attributes'=>array(
-		'type',
+		array(               
+            'label'=>'Type',
+            //'type'=>'label',
+            'value'=>Lookup::item('BookType',$books->type)),
 		'title',
 		'description',
 		'book_author',
