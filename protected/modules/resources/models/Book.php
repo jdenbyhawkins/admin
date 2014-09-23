@@ -42,7 +42,7 @@ class Book extends CActiveRecord
 			array('title, book_author', 'length', 'max'=>128),
 			array('description', 'length', 'max'=>255),
 			array('created_at', 'default', 'value' => date('Y-m-d H:i:s'), 'setOnEmpty' => true, 'on' => 'insert'),
-            array('updated_at', 'default', 'value' => '0000-00-00 00:00:00', 'setOnEmpty' => true, 'on' => 'insert'),
+            array('notes', 'safe'),
 			//array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

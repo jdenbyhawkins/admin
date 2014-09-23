@@ -18,7 +18,7 @@
 		$this->endWidget();
 	?>
 	
-	   
+	    <?php if(!Yii::app()->user->isGuest) $this->widget('ResourceMenu'); ?>
 	
 	</div><!-- sidebar -->
 </div>

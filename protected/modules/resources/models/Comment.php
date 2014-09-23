@@ -152,4 +152,8 @@ class Comment extends CActiveRecord
 		else
 			return CHtml::encode($this->author);
 	}
+	public function getPendingCommentCount()
+	{
+		return $this->count('status='.self::STATUS_PENDING);
+	}
 }

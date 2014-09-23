@@ -9,9 +9,9 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Resources', 'url'=>array('index')),
-	array('label'=>'Create Resources', 'url'=>array('create')),
-	array('label'=>'Update Resources', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Resources', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Create Resource', 'url'=>array('create')),
+	array('label'=>'Update Resource', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete Resource', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Resources', 'url'=>array('admin')),
 );
 ?>
@@ -54,15 +54,7 @@ $this->menu=array(
             'web'=>$model->web,
         )); ?>
     <?php endif; ?>
-    <h3>Create a url link</h3>
-
-        <?php $this->renderPartial('/web/_form',array(
-            'model'=>$web,
-        )); ?>
-    
-
-
- 
+     
 </div><!-- web -->
 
 <div id="book">

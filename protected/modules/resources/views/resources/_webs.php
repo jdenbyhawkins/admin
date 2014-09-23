@@ -10,6 +10,7 @@
 		'url',
 		'notes',
 		'article_author',
+
 	
 	),
 )); ?>
@@ -18,7 +19,11 @@
 		posted by <a href="mailto:<?php echo $web->created_email;?>" target="_top"> <?php echo $web->created_by ?></a><?php echo ' on ' . date('F j, Y', strtotime($web->created_at)); ?>
 	</div>
 	<div class="updated">
-		updated by <a href="mailto:<?php echo $web->updated_email;?>" target="_top"> <?php echo $web->created_by ?></a><?php echo  ' on ' . date('F j, Y', strtotime($web->updated_at)); ?>
+		<?php if($web->updated_at!==null){ ?> <a href="mailto:<?php echo $web->updated_email;?>" target="_top"> <?php echo $web->updated_by ?></a><?php echo  ' on ' . date('F j, Y', strtotime($web->updated_at)); } ?>
+	</div>
+	<div class="edit">
+		<?php echo CHtml::link(CHtml::encode('Update'), array('web/update', 'id'=>$web->id)); ?>
+		<?php echo CHtml::link('Delete',"#", array("submit"=>array('web/delete', 'id'=>$web->id), 'confirm' => 'Are you sure?')); ?>
 	</div>
 
 	

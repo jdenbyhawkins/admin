@@ -44,7 +44,7 @@ class Web extends CActiveRecord
 			array('description, picture', 'length', 'max'=>255),
 			array('url','url'),
 			array('created_at', 'default', 'value' => date('Y-m-d H:i:s'), 'setOnEmpty' => true, 'on' => 'insert'),
-            array('updated_at', 'default', 'value' => '0000-00-00 00:00:00', 'setOnEmpty' => true, 'on' => 'insert'),
+            array('notes', 'safe'),
 
 			//array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().

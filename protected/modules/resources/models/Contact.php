@@ -48,7 +48,7 @@ class Contact extends CActiveRecord
 			array('firstname, lastname, company, job_title, work_email, home_email, skype', 'length', 'max'=>128),
 			array('created_at, updated_at', 'safe'),
 			array('created_at', 'default', 'value' => date('Y-m-d H:i:s'), 'setOnEmpty' => true, 'on' => 'insert'),
-            array('updated_at', 'default', 'value' => '0000-00-00 00:00:00', 'setOnEmpty' => true, 'on' => 'insert'),
+            array('notes', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, firstname, lastname, company, job_title, work_email, home_email, home_number, work_number, mobile_number, skype, notes, created_at, updated_at, created_by, created_email, updated_by, updated_email, resource_id, picture', 'safe', 'on'=>'search'),

@@ -13,6 +13,8 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Web</h1>
+<h3>Create a url link</h3>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        <?php $this->renderPartial('/web/_form',array(
+            'model'=>$model,
+        )); ?>
