@@ -1,7 +1,6 @@
 <ul>
     <li><?php echo CHtml::link(CHtml::encode('Create new URL'), array('web/create', 'id'=>$model->id)); ?></li>
-    <li><?php echo CHtml::link('Manage Posts',array('post/admin')); ?></li>
-    <li><?php echo CHtml::link('Approve Comments',array('comment/index'))
-        . ' (' . Comment::model()->pendingCommentCount . ')'; ?></li>
-    <li><?php echo CHtml::link('Logout',array('site/logout')); ?></li>
+    <li><?php echo CHtml::link(CHtml::encode('Create new Hard Copy'), array('book/create', 'id'=>$model->id)); ?></li>
+    <li><?php echo CHtml::link(CHtml::encode('Create new contact'), array('contact/create', 'id'=>$model->id)); ?></li>
+    <li><?php echo CHtml::link(CHtml::encode('Upload a new file'), array('file/create', 'id'=>$model->id)); ?></li>
 </ul>

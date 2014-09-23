@@ -4293,3 +4293,44 @@ Stack trace:
 REQUEST_URI=/admin/index.php?r=resources/web/delete&id=5
 HTTP_REFERER=http://localhost/admin/index.php?r=resources/resources/view&id=1
 ---
+2014/09/23 08:14:50 [warning] [application] Failed to set unsafe attribute "picture" of "Book".
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\BookController.php (171)
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\BookController.php (68)
+in C:\xampp\htdocs\EBS_DB\admin\index.php (13)
+2014/09/23 08:14:56 [warning] [application] Failed to set unsafe attribute "picture" of "Book".
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\BookController.php (171)
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\BookController.php (68)
+in C:\xampp\htdocs\EBS_DB\admin\index.php (13)
+2014/09/23 08:14:59 [warning] [application] Failed to set unsafe attribute "picture" of "Book".
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\BookController.php (171)
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\BookController.php (68)
+in C:\xampp\htdocs\EBS_DB\admin\index.php (13)
+2014/09/23 08:15:00 [warning] [application] Failed to set unsafe attribute "picture" of "Book".
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\BookController.php (72)
+in C:\xampp\htdocs\EBS_DB\admin\index.php (13)
+2014/09/23 08:19:25 [warning] [application] Failed to set unsafe attribute "picture" of "Book".
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\BookController.php (171)
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\BookController.php (68)
+in C:\xampp\htdocs\EBS_DB\admin\index.php (13)
+2014/09/23 08:19:27 [warning] [application] Failed to set unsafe attribute "picture" of "Book".
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\BookController.php (72)
+in C:\xampp\htdocs\EBS_DB\admin\index.php (13)
+2014/09/23 08:19:29 [warning] [application] Failed to set unsafe attribute "picture" of "Book".
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\BookController.php (171)
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\BookController.php (68)
+in C:\xampp\htdocs\EBS_DB\admin\index.php (13)
+2014/09/23 08:23:44 [warning] [application] Failed to set unsafe attribute "picture" of "Contact".
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\ContactController.php (171)
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\ContactController.php (68)
+in C:\xampp\htdocs\EBS_DB\admin\index.php (13)
+2014/09/23 08:23:46 [warning] [application] Failed to set unsafe attribute "picture" of "Contact".
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\ContactController.php (171)
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\ContactController.php (68)
+in C:\xampp\htdocs\EBS_DB\admin\index.php (13)
+2014/09/23 08:23:51 [warning] [application] Failed to set unsafe attribute "picture" of "Contact".
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\ContactController.php (72)
+in C:\xampp\htdocs\EBS_DB\admin\index.php (13)
+2014/09/23 08:23:52 [warning] [application] Failed to set unsafe attribute "picture" of "Contact".
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\ContactController.php (171)
+in C:\xampp\htdocs\EBS_DB\admin\protected\modules\resources\controllers\ContactController.php (68)
+in C:\xampp\htdocs\EBS_DB\admin\index.php (13)

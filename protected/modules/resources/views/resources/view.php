@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Resources #<?php echo $model->id; ?></h1>
+<h1>View Resource #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -72,15 +72,6 @@ $this->menu=array(
         )); ?>
     <?php endif; ?>
 
-    <h3>Create a hard copy link</h3>
-
-        <?php $this->renderPartial('/book/_form',array(
-            'model'=>$book,
-        )); ?>
-    
-
-
- 
 </div><!-- book -->
 
 <div id="contact">
@@ -98,15 +89,6 @@ $this->menu=array(
         )); ?>
     <?php endif; ?>
 
-    <h3>Create a Contact</h3>
-
-        <?php $this->renderPartial('/contact/_form',array(
-            'model'=>$contact,
-        )); ?>
-    
-
-
- 
 </div><!-- contact -->
 
 <div id="file">
@@ -124,15 +106,6 @@ $this->menu=array(
         )); ?>
     <?php endif; ?>
 
-    <h3>Attach a file</h3>
-
-        <?php $this->renderPartial('/file/_form',array(
-            'model'=>$file,
-        )); ?>
-    
-
-
- 
 </div><!-- contact -->
 
 <div id="comments">
