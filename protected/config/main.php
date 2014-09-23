@@ -61,6 +61,7 @@ return array(
             'returnLogoutUrl' => array('/user/login'),
         ),
         'resources',
+        'tasks',
 		
 	),
 
